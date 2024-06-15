@@ -13,7 +13,7 @@ export default class Config {
     } = {
         host: process.env.REDIS_HOST || '127.0.0.1',
         port: parseInt(process.env.REDIS_PORT || '6379'),
-        user: process.env.REDIS_USER = '',
-        pass: process.env.REDIS_PASS = ''
+        user: process.env.REDIS_USER || '',
+        pass: process.env.REDIS_PASS || ''
     };
 }

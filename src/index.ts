@@ -29,6 +29,7 @@ if (Config.rateLimit) {
         url = `redis://${Config.redisConn.user}:${Config.redisConn.pass}@${Config.redisConn.host}:${Config.redisConn.port}`;
     }
 
+    console.info(url);
     const redisClient: redis.RedisClientType = redis.createClient({
         url: Config.redisCurl
     });
@@ -69,6 +70,7 @@ if (Config.rateLimit) {
     
             next();
         } catch (rateLimitException: any) {
+            logger.error(rateLimitException);
             const retryAfter = Math.ceil(rateLimitException.msBeforeNext / 1000);
 
             response.setHeader('Retry-After', String(retryAfter));

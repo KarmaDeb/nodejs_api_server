@@ -42,7 +42,6 @@ export function rotateLogs() {
     fs.renameSync(logFile, newLogFile);
     fs.renameSync(errorsFile, newErrFile);
 };
-console.info(rotated);
 if (!rotated) {
     rotateLogs();
     rotated = true;
