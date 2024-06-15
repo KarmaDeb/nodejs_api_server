@@ -1,0 +1,30 @@
+{
+  "name": "api",
+  "author": {
+    "name": "KarmaDev",
+    "email": "karmadev.es@gmail.com",
+    "url": "https://gitlab.com/karmadev"
+  },
+  "license": "MIT",
+  "description": "A template for an API server with automatic route name anonymization.",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "rate-limiter-flexible": "^5.0.3",
+    "redis": "^4.6.14",
+    "winston": "^3.13.0"
+  },
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "prod": "bun run src/index.ts"
+  }
+}
